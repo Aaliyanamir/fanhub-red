@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Dark mode via .dark class on <html> */
+@variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #090C15;
+  --color-foreground: #f9fafb;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Fan Hub Plus Brand Palette - Cinematic Dark & Crimson Accent */
+  --color-brand-bg: #090C15;
+  --color-brand-panel: #111827;
+  --color-brand-primary: #E50914;
+  --color-brand-accent: #38BDF8;
+}
+
+/* Utility to hide scrollbar for MovieRow */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Slow & Smooth Keyframe Animations */
+@keyframes slowFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes slowPulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.animate-slow-float {
+  animation: slowFloat 3.5s ease-in-out infinite;
+}
+
+.animate-slow-pulse {
+  animation: slowPulseGlow 3.5s ease-in-out infinite;
+}
+
